@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard | AI-Powered Phishing Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>PhishGuard</span>
+            </div>
+            <p class="subtitle">Advanced AI Threat Detection System</p>
+        </header>
+
+        <main>
+            <div class="card glass-panel">
+                <div class="input-group">
+                    <label for="email-content">Analyze Suspicious Content</label>
+                    <textarea id="email-content" placeholder="Paste the email body or URL here to scan for threats..."></textarea>
+                </div>
+                
+                <button id="scan-btn" class="btn-primary">
+                    <span class="btn-text">Scan Now</span>
+                    <i class="fa-solid fa-radar"></i>
+                </button>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="result-card glass-panel">
+                    <div class="status-icon">
+                        <i id="status-icon-i" class="fa-solid"></i>
+                    </div>
+                    <div class="result-details">
+                        <h2 id="result-title">Analysis Complete</h2>
+                        <p id="result-message">Confidence Score: <span id="confidence-score">0%</span></p>
+                        <div class="progress-bar-bg">
+                            <div id="confidence-bar" class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 PhishGuard Security Labs. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
